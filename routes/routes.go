@@ -29,7 +29,7 @@ func Router() *gin.Engine {
 
 
 	// Admin routes
-	router.Static("/admin","./admin")
+	// router.Static("/admin","./admin")
 	router.POST("/adminlogin", controller.AdminLogin)
 	router.POST("/createadmin", controller.CreateAdmin)
 	router.POST("/getdataforadmin", controller.GetData)
