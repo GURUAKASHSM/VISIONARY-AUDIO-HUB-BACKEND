@@ -27,9 +27,11 @@ func SendSMSforVerification(mobileno, otp string) {
 	resp, ex, err := client.SendSMS(from, to, message, "", "")
 	if err != nil {
 		log.Printf("Error sending SMS: %s", err)
+		return
 	}
 	if ex != nil {
 		log.Printf("Exception sending SMS: %s", ex.Message)
+		return
 	}
 	log.Printf("SMS Sent! SID: %s, Status: %s", resp.Sid, resp.Status)
 }
